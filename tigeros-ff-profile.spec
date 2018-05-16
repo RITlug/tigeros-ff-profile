@@ -6,8 +6,7 @@ Summary:        TigerOS default profile for Firefox
 License:        GPLv3+
 URL:            https://github.com/RITlug/tigeros-ff-profile
 
-Source0:        .mozilla/
-Source1:        LICENSE
+Source0:        %{name}-%{version}-%{release}.tar.gz
 BuildArch:      noarch
 Requires:       firefox
 
@@ -19,7 +18,7 @@ This package contains the default bookmarks for TigerOS.
 
 %install
 %{__mkdir_p} %{buildroot}/etc/skel/
-install -d -m 755 %{SOURCE0} %{buildroot}/etc/skel/%{SOURCE0}
+install -d -m 755 .mozilla/ %{buildroot}/etc/skel/.mozilla/
 
 %files
 %license LICENSE
