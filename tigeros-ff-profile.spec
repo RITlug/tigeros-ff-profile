@@ -6,7 +6,7 @@ Summary:        TigerOS default profile for Firefox
 License:        GPLv3+
 URL:            https://github.com/RITlug/tigeros-ff-profile
 
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}-%{release}.tar.gz
 BuildArch:      noarch
 Requires:       firefox
 
