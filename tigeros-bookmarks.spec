@@ -1,12 +1,13 @@
 Name:           tigeros-ff-profile
 Version:        1.0
-Release:        2%{?dist}
+Release:        3%{?dist}
+
 Summary:        TigerOS default profile for Firefox
-Group:          Applications/Internet
-License:        GPL3
-URL:            https://github.com/RITlug/TigerOS
-Source0:        tigeros-ff-profile.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+License:        GPLv3+
+URL:            https://github.com/RITlug/tigeros-ff-profile
+
+Source0:        .mozilla/
+Source1:        LICENSE
 BuildArch:      noarch
 Requires:       firefox
 
@@ -15,22 +16,19 @@ This package contains the default bookmarks for TigerOS.
 
 %prep
 %setup -q
-%build
 
 %install
-%{__rm} -rf %{buildroot}
 %{__mkdir_p} %{buildroot}/etc/skel/
-cp -r .mozilla/ %{buildroot}/etc/skel/
-chmod -R 755 %{buildroot}/etc/skel/.mozilla
-
-%clean
-%{__rm} -rf $RPM_BUILD_ROOT
-
+install -d -m 755 %{SOURCE0} %{buildroot}/etc/skel/%{SOURCE0}
 
 %files
+%license LICENSE
 /etc/skel/.mozilla
 
 %changelog
+* Wed May 16 2018 Tim Zabel <tjz8659@rit.edu> - 1.0-3
+- Fedora 28 rebuild
+
 * Wed Aug 30 2017 Aidan Kahrs <axk4545@rit.edu> - 1.0-2
 - rebuild for Fedora 26
 
