@@ -1,6 +1,6 @@
 Name:           tigeros-ff-profile
 Version:        1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 
 Summary:        TigerOS default profile for Firefox
 License:        GPLv3+
@@ -25,6 +25,9 @@ install -d -m 755 .mozilla/ %{buildroot}/etc/skel/.mozilla/
 /etc/skel/.mozilla
 
 %changelog
+* Mon Oct 01 2018 Tim Zabel <tjz8659@rit.edu> - 1.0-4
+- Fedora 29 build
+
 * Wed May 16 2018 Tim Zabel <tjz8659@rit.edu> - 1.0-3
 - Fedora 28 rebuild
 
